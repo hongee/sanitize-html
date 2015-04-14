@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "htmlparser2": "3.8.x",
-    "lodash": "3.6.x^",
+    "lodash": "3.6.0",
     "regexp-quote": "0.0.0"
   }
 }
