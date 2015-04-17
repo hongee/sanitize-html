@@ -99,6 +99,14 @@ function sanitizeHtml(html, options, _recursing) {
   var skipText = false;
   var parser = new htmlparser.Parser({
     onopentag: function(name, attribs) {
+
+      //fix for weird tags found in the middle of the page
+      //possibly put this into a map
+      if(name === "body" && depth > 2) {
+        return;
+      }
+
+      
       var frame = new Frame(name, attribs);
       stack.push(frame);
 
@@ -179,6 +187,15 @@ function sanitizeHtml(html, options, _recursing) {
       }
     },
     onclosetag: function(name) {
+
+      //fix for weird tags found in the middle of the page
+      //possibly put this into a map
+      if(name === "body" && depth > 2) {
+        return;
+      }
+
+
+
       var frame = stack.pop();
       if (!frame) {
         // Do not crash on bad markup

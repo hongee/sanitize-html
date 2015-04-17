@@ -21,7 +21,7 @@
   "author": "P'unk Avenue LLC",
   "license": "MIT",
   "dependencies": {
-    "htmlparser2": "3.8.x",
+    "htmlparser2": "git://github.com/hongee/htmlparser2",
     "lodash": "3.6.0",
     "regexp-quote": "0.0.0"
   }
